@@ -29,18 +29,19 @@ app.use('/', Route );
 app.use(express.static(path.join(__dirname,'./client/build')))
 
 app.get('*', function(req,res){
-    res.sendFile(path.join(__dirname,"./client/build/index.html"))
+    res.sendFile(path.join(__dirname,"./client/build/index.html"));
 });
 
 
 
 
-const username = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
+// const username = process.env.DB_USERNAME;
+// const password = process.env.DB_PASSWORD;
+const MONGODB_URL = process.env.URL;
 
 
 
-Connection(username, password);
+Connection(MONGODB_URL);
 
 app.listen(PORT, ()=>{
     // Connection();
