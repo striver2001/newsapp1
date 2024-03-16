@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-const Connection = async(username, password) =>{
-    const URL=`mongodb+srv://${username}:${password}@inshortsclone.klkpplx.mongodb.net/?retryWrites=true&w=majority&appName=inShortsClone`;
+const Connection = async(MONGODB_URL) =>{
+   //  const URL=``;
    try{
 
-await mongoose.connect(URL);
+await mongoose.connect(MONGODB_URL);
 console.log("database is connected successfully")
    }catch(error)
    {
