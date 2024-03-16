@@ -4,11 +4,7 @@ const Connection = async(username, password) =>{
     const URL=`mongodb+srv://${username}:${password}@inshortsclone.klkpplx.mongodb.net/?retryWrites=true&w=majority&appName=inShortsClone`;
    try{
 
-await mongoose.connect(URL,{
-   useNewUrlParser: true,
-   useUnifiedTopology: true,
-   
-});
+await mongoose.connect(URL);
 console.log("database is connected successfully")
    }catch(error)
    {
