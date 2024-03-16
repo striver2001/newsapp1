@@ -5,7 +5,12 @@ import DefaultData from './default.js';
 import Route from './routes/route.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import path from 'path';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 const app = express();
 dotenv.config();
